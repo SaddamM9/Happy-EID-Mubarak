@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eid Mubarak</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to top, #0d1b2a, #1b263b);
+      overflow: hidden;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+    }
+
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 2s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    .moon {
+      margin-top: 80px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #fff, #ccc);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+      position: relative;
+      z-index: 2;
+      display: inline-block;
+      animation: glow 4s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+      }
+      50% {
+        box-shadow: 0 0 50px rgba(255, 255, 255, 0.9);
+      }
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-top: 40px;
+      color: #ffd700;
+      z-index: 2;
+      position: relative;
+      text-shadow: 0 0 10px #fff;
+    }
+
+    p {
+      font-size: 1.5em;
+      color: #ddd;
+      z-index: 2;
+      position: relative;
+      padding: 0 20px;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 1em;
+      color: #888;
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="stars" id="stars"></div>
+  <div class="moon"></div>
+  <h1>Eid Mubarak!</h1>
+  <p>May this Eid bring peace, joy, and blessings to you and your loved ones.</p>
+  <footer>Made with ❤️ by Saddam</footer>
+
+  <script>
+    // Create twinkling stars
+    const starsContainer = document.getElementById('stars');
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.top = Math.random() * window.innerHeight + 'px';
+      star.style.left = Math.random() * window.innerWidth + 'px';
+      star.style.animationDelay = Math.random() * 5 + 's';
+      star.style.opacity = Math.random();
+      starsContainer.appendChild(star);
+    }
+  </script>
+</body>
+</html>
